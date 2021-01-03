@@ -8,7 +8,7 @@ It wouldn't build properly with NPM because the project's not been kept up to da
 
 ## Run locally
 
-Some parts of service worker do not run without SSL, so first you need some certificates. I use mkcert (add sudo if you need to):
+Some parts of service worker do not run without SSL, so first you need some certificates. I use [mkcert](https://github.com/FiloSottile/mkcert) (add sudo if you need to):
 
     mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
 
