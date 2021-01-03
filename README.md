@@ -2,9 +2,13 @@
 
 Tracks the features of service worker supported in browsers.
 
+## Why the fork? ##
+
+It wouldn't build properly with NPM because the project's not been kept up to date with dependencies, which is hardly surprising given that the npm ecosystem updates more often than the wind changes direction. I've used [Kemal](https://github.com/kemalcr/kemal/) (written in the [Crystal](crystal-lang.org/) language) because, even though it's a relatively new language and a new framework, it's not going to suffer from the mistakes being made in the Javascript ecosystem; and Kemal serves SSL, which parts of the background worker functionality require (another mistake by Javascript/browser developers - do they not think about developers using localhost? Apparently not.)
+
 ## Run locally
 
-Some parts of service worker do not run without SSL, so first you need some certificates. I use mkcert:
+Some parts of service worker do not run without SSL, so first you need some certificates. I use mkcert (add sudo if you need to):
 
     mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
 
