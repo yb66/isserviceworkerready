@@ -36,17 +36,17 @@
 
 <% data.features.each do |feature| %>
 	<article class="feature" id="<%= feature.fid %>">
-			<header>
-				<a href="#<%= feature.fid %>" class="perma">
-					<h1 class="feature-name">
-						<%= feature.name %>
-					</h1>
-				</a>
-				<p><%= feature.description %></p>
-			</header>
-			<div class="results">
-				<% feature.browsers.each do |browser| %>
-					<section class='result <%= browser.support %>'>
+		<header>
+			<a href="#<%= feature.fid %>" class="perma">
+				<h1 class="feature-name">
+					<%= feature.name %>
+				</h1>
+			</a>
+			<p><%= feature.description %></p>
+		</header>
+		<div class="results">
+			<% feature.browsers.each do |browser| %>
+				<section class='result <%= browser.support %>'>
 					<%= "<h1 class='icon #{browser.icon || browser.name}'>#{browser.name}</h1>" %>
 					<% if browser.supported? %>
 						<p class="support">
