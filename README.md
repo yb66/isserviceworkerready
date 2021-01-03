@@ -29,7 +29,7 @@ and then I remove all the dangling images, no need to have them hanging around:
 To serve the site on `https://localhost:9292`:
 
 ```
-docker run --rm -p 9292:3000 'janu5/isserviceworkerready'
+docker run --rm -p 9292:3000 'YOUR_USERNAME/isserviceworkerready'
 ```
 
 Now you should be able to run the site locally, via localhost or example.com, and see what's what.
