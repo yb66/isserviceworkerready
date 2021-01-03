@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <%= yield_content "title" %>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0">
     <link rel="stylesheet" href="css/all.css">
-    {% block head %}{% endblock %}
+    <%= yield_content "scripts_and_styles" %>
   </head>
   <body>
-    {% block body %}{% endblock %}
+    <%= content %>
   </body>
 </html>
