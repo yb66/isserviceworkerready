@@ -35,24 +35,21 @@
       log(err.message);
     });
 
-    document.querySelector('.register').addEventListener('click', function(event) {
+    document.querySelector('.register').addEventListener('click',event =>{
       event.preventDefault();
 
       new Promise(function(resolve, reject) {
-        Notification.requestPermission(function(result) {
+        Notification.requestPermission( result => {
           if (result !== 'granted') return reject(Error("Denied notification permission"));
           resolve();
         })
-      }).then(function() {
-        return navigator.serviceWorker.ready;
-      }).then(function(reg) {
-        return reg.sync.register('syncTest');
-      }).then(function() {
-        log('Sync registered');
-      }).catch(function(err) {
-        log('It broke');
-        log(err.message);
-      });
+      })
+      .then(()	=>	navigator.serviceWorker.ready)
+      .catch(err=>	log(`It broke at serviceWorker.ready: ${err.message}`))
+      .then(reg => 	reg.sync.register('syncTest'))
+      .catch(err=>	log(`It broke at reg.sync.register: ${err.message}`))
+      .then(()	=> 	log('Sync registered'))
+      .catch(err=>	log(`It broke: ${err.message}`));
     });
 
     window.onerror = function(msg) {
