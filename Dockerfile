@@ -11,7 +11,7 @@ FROM crystallang/crystal:0.35.1-alpine
 WORKDIR /home
 COPY --from=0 /home/app /home/
 COPY key.pem pem.pem ./
-COPY public/ /home/public
+#COPY public/ /home/public
 
 EXPOSE 3000
 
